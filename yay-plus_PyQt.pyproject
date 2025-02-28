@@ -1,0 +1,12 @@
+{
+    "files": [
+        "home.py",
+        "form.ui",
+        "uninstall.py",
+        "uninstall.ui",
+        "uninstall_pacman.ui",
+        "uninstall_pacman.py",
+        "uninstall_flatpak.ui",
+        "uninstall_flatpak.py"
+    ]
+}
