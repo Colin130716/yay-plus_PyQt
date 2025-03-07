@@ -1,12 +1,12 @@
 {
     "files": [
-        "home.py",
-        "form.ui",
-        "uninstall.py",
-        "uninstall.ui",
-        "uninstall_pacman.ui",
-        "uninstall_pacman.py",
-        "uninstall_flatpak.ui",
-        "uninstall_flatpak.py"
+        "src/home.py",
+        "src/form.ui",
+        "src/uninstall.py",
+        "src/uninstall.ui",
+        "src/uninstall_pacman.ui",
+        "src/uninstall_pacman.py",
+        "src/uninstall_flatpak.ui",
+        "src/uninstall_flatpak.py"
     ]
 }

@@ -48,8 +48,31 @@ class Ui_Uninstall_Flatpak(object):
 
     def user_button_clicked(self):
         self.input_text = self.lineEdit.text()
-        result = subprocess.run("flatpak uninstall --user --force-remove --delete-data -y {self.input_text}", shell=True)
+        self.option = "-y -u --force-remove --delete_data"
+        result = subprocess.run(
+            ["flatpak uninstall", self.input_text, self.option],
+            capture_output = True,
+            text = True,
+            check = True
+        )
+        print(result.stdout)
+        global exit_code
         exit_code = result.returncode
+        self.Ui_Uninstall_Flatpak.reject()
+    def system_button_clicked(self):
+        self.input_text = self.lineEdit.text()
+        self.option = "-y -u --force-remove --delete_data"
+        result = subprocess.run(
+            ["flatpak uninstall", self.input_text, self.option],
+            capture_output = True,
+            text = True,
+            check = True
+        )
+        print(result.stdout)
+        global exit_code
+        exit_code = result.returncode
+        self.Ui_Uninstall_Flatpak.reject()
+
 
 
 if __name__ == "__main__":

@@ -48,7 +48,7 @@ class Ui_Uninstall_Pacman(object):
         self.input_text = self.lineEdit.text()
         self.option = "--noconfirm"
         result = subprocess.run(
-            ["chmod +x ./askpass.sh && export SUDO_ASKPASS=./askpass.sh && sudo --askpass pacman -Rsn", self.input_text, self.option]
+            ["chmod +x ./askpass.sh && export SUDO_ASKPASS=./askpass.sh && sudo --askpass pacman -Rsn", self.input_text, self.option],
             capture_output = True,
             text = True,
             check = True

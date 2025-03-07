@@ -8,6 +8,7 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from uninstall_pacman import *
+from uninstall_flatpak import *
 
 
 class Ui_Uninstall(object):
@@ -53,8 +54,23 @@ class Ui_Uninstall(object):
         # 设置为模态
         self.uninstall_dialog.exec()
 
+    def Flatpak_Uninstall(self):
+        # 方法一：使用模态对话框（推荐）
+        self.uninstall_dialog = QtWidgets.QDialog()
+        self.ui_uninstall_flatpak = Ui_Uninstall_Flatpak()
+        self.ui_uninstall_flatpak.setupUi(self.uninstall_dialog)
+        # 设置关闭时自动销毁
+        self.uninstall_dialog.setAttribute(QtCore.Qt.WidgetAttribute.WA_DeleteOnClose)
+        # 连接对话框关闭信号
+        self.uninstall_dialog.finished.connect(self.restore_main_window_flatpak)
+        # 设置为模态
+        self.uninstall_dialog.exec()
+
     def restore_main_window_pacman(self, result):
-        print("Pacman 卸载窗口已关闭，返回码:", result)
+        print("Pacman 卸载窗口已关闭，返回码:", self.Ui_Uninstall_Pacman.exit_code)
+
+    def restore_main_window_flatpak(self, result):
+        print("Flatpak 卸载窗口已关闭，返回码:", self.Ui_Uninstall_Flatpak.exit_code)
 
 
 if __name__ == "__main__":
