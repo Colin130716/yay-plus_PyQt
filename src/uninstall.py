@@ -67,10 +67,10 @@ class Ui_Uninstall(object):
         self.uninstall_dialog.exec()
 
     def restore_main_window_pacman(self, result):
-        print("Pacman 卸载窗口已关闭，返回码:", self.Ui_Uninstall_Pacman.exit_code)
+        print(self.tr("Pacman 卸载窗口已关闭，返回码:"), self.Ui_Uninstall_Pacman.exit_code)
 
     def restore_main_window_flatpak(self, result):
-        print("Flatpak 卸载窗口已关闭，返回码:", self.Ui_Uninstall_Flatpak.exit_code)
+        print(self.tr("Flatpak 卸载窗口已关闭，返回码:"), self.Ui_Uninstall_Flatpak.exit_code)
 
 
 if __name__ == "__main__":

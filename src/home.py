@@ -69,7 +69,7 @@ class Ui_Home(object):
         self.uninstall_dialog.exec()
 
     def restore_main_window(self, result):
-        print("卸载窗口已关闭，返回码:", result)
+        print(self.tr("卸载窗口已关闭，返回码:"), result)
 
 
 if __name__ == "__main__":

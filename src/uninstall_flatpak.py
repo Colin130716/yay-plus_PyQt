@@ -8,6 +8,7 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 import subprocess
+import os
 
 
 class Ui_Uninstall_Flatpak(object):
@@ -49,8 +50,10 @@ class Ui_Uninstall_Flatpak(object):
     def user_button_clicked(self):
         self.input_text = self.lineEdit.text()
         self.option = "-y -u --force-remove --delete_data"
+        self.SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+        self.ASKPASS_DIR = os.path.join(self.SCRIPT_DIR, "askpass.sh")
         result = subprocess.run(
-            ["flatpak uninstall", self.input_text, self.option],
+            ["chmod +x", self.ASKPASS_DIR, "&& export SUDO_ASKPASS =", self.ASKPASS_DIR, "&& flatpak uninstall", self.input_text, self.option],
             capture_output = True,
             text = True,
             check = True
@@ -61,9 +64,11 @@ class Ui_Uninstall_Flatpak(object):
         self.Ui_Uninstall_Flatpak.reject()
     def system_button_clicked(self):
         self.input_text = self.lineEdit.text()
-        self.option = "-y -u --force-remove --delete_data"
+        self.option = "-y --system --force-remove --delete_data"
+        self.SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+        self.ASKPASS_DIR = os.path.join(self.SCRIPT_DIR, "askpass.sh")
         result = subprocess.run(
-            ["flatpak uninstall", self.input_text, self.option],
+            ["chmod +x", self.ASKPASS_DIR, "&& export SUDO_ASKPASS =", self.ASKPASS_DIR, "&& flatpak uninstall", self.input_text, self.option],
             capture_output = True,
             text = True,
             check = True

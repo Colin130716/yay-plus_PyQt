@@ -1,6 +1,6 @@
-# yay-plus_PyQt
+# yay-plus_PyQt README v2
 
-yay+的PyQt版项目存放位置
+yay+的PyQt版项目存放位置，开源协议同[主仓库](https://github.com/Colin130716/yay-plus)，为GPLv3。
 
 ![icon](https://github.com/Colin130716/yay-plus_PyQt/blob/master/icons/256x256.png)
 
@@ -9,7 +9,9 @@ yay+的PyQt版项目存放位置
 ## 使用方法（PyQt版）
 
 1. ``git clone https://github.com/Colin130716/yay-plus_PyQt.git``
-2. ``cd <git clone到的路径>/yay-plus_PyQt``
+2. ``cd <git clone到的路径>/yay-plus_PyQt/src``
 3. ``python3 -m pip install -r requirements.txt``
-4. **[注意：这一步非常重要！必须执行这一步，不然程序会报错异常退出]** 修改软件目录下的 pwd 文件，输入用户的密码 **（不要加其他内容）** ，然后保存退出。
-5. ``python3 -u home.py``
+4. ``chmod 700 askpass.py``
+5. ``chmod +x askpass.py``
+6. ``./askpass.py --init``
+7. ``python3 home.py``

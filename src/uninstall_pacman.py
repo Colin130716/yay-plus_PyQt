@@ -8,6 +8,7 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 import subprocess
+import os
 
 
 class Ui_Uninstall_Pacman(object):
@@ -47,8 +48,10 @@ class Ui_Uninstall_Pacman(object):
     def yes_button_clicked(self):
         self.input_text = self.lineEdit.text()
         self.option = "--noconfirm"
+        self.SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+        self.ASKPASS_DIR = os.path.join(self.SCRIPT_DIR, "askpass.sh")
         result = subprocess.run(
-            ["chmod +x ./askpass.sh && export SUDO_ASKPASS=./askpass.sh && sudo --askpass pacman -Rsn", self.input_text, self.option],
+            ["chmod +x", self.ASKPASS_DIR, "&& export SUDO_ASKPASS =", self.ASKPASS_DIR, "&& sudo --askpass pacman -Rsn", self.input_text, self.option],
             capture_output = True,
             text = True,
             check = True
