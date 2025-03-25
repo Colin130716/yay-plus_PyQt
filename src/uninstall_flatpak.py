@@ -40,12 +40,12 @@ class Ui_Uninstall_Flatpak(object):
 
     def retranslateUi(self, Uninstall_Flatpak):
         _translate = QtCore.QCoreApplication.translate
-        Uninstall_Flatpak.setWindowTitle(_translate("Uninstall_Flatpak", "Dialog"))
-        self.pushButton_yes_user.setText(_translate("Uninstall_Flatpak", "确定（用户级）"))
-        self.pushButton_yes_system.setText(_translate("Uninstall_Flatpak", "确定（系统级）"))
-        self.lineEdit.setText(_translate("Uninstall_Flatpak", "修改此处文字修改为你要卸载的软件名称（支持多个，用空格隔开）"))
-        self.label.setText(_translate("Uninstall_Flatpak", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">卸载</span></p></body></html>"))
-        self.pushButton_no.setText(_translate("Uninstall_Flatpak", "取消"))
+        Uninstall_Flatpak.setWindowTitle(_translate("Uninstall_Flatpak", "yay+ Uninstall with Flatpak"))
+        self.pushButton_yes_user.setText(_translate("Uninstall_Flatpak", self.tr("确定（用户级）")))
+        self.pushButton_yes_system.setText(_translate("Uninstall_Flatpak", self.tr("确定（系统级）")))
+        self.lineEdit.setText(_translate("Uninstall_Flatpak", self.tr("修改此处文字修改为你要卸载的软件名称（支持多个，用空格隔开）")))
+        self.label.setText(_translate("Uninstall_Flatpak", self.tr("<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">卸载</span></p></body></html>")))
+        self.pushButton_no.setText(_translate("Uninstall_Flatpak", self.tr("取消")))
 
     def user_button_clicked(self):
         self.input_text = self.lineEdit.text()

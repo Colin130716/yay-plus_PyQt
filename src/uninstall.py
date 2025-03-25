@@ -35,9 +35,9 @@ class Ui_Uninstall(object):
     def retranslateUi(self, Uninstall):
         _translate = QtCore.QCoreApplication.translate
         Uninstall.setWindowTitle(_translate("Uninstall", "yay+ Uninstall MainWindow"))
-        self.pushButton.setText(_translate("Uninstall", "卸载 Pacman 安装的软件（包括使用 makepkg 的 -i 参数安装的）"))
-        self.pushButton_2.setText(_translate("Uninstall", "卸载 Flatpak 安装的软件"))
-        self.label.setText(_translate("Uninstall", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">卸载</span></p></body></html>"))
+        self.pushButton.setText(_translate("Uninstall", self.tr("卸载 Pacman 安装的软件（包括使用 makepkg 的 -i 参数安装的）")))
+        self.pushButton_2.setText(_translate("Uninstall", self.tr("卸载 Flatpak 安装的软件")))
+        self.label.setText(_translate("Uninstall", self.tr("<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">卸载</span></p></body></html>")))
 
     def Pacman_Uninstall(self):
         # 方法一：使用模态对话框（推荐）
@@ -67,10 +67,10 @@ class Ui_Uninstall(object):
         self.uninstall_dialog.exec()
 
     def restore_main_window_pacman(self, result):
-        print(self.tr("Pacman 卸载窗口已关闭，返回码:"), self.Ui_Uninstall_Pacman.exit_code)
+        print(QtCore.QCoreApplication.translate("Uninstall", "Pacman 卸载窗口已关闭，返回码:", self.ui_uninstall_pacman.exit_code))
 
     def restore_main_window_flatpak(self, result):
-        print(self.tr("Flatpak 卸载窗口已关闭，返回码:"), self.Ui_Uninstall_Flatpak.exit_code)
+        print(QtCore.QCoreApplication.translate("Uninstall", "Flatpak 卸载窗口已关闭，返回码:", self.ui_uninstall_flatpak.exit_code))
 
 
 if __name__ == "__main__":

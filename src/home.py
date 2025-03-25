@@ -46,11 +46,11 @@ class Ui_Home(object):
     def retranslateUi(self, Home):
         _translate = QtCore.QCoreApplication.translate
         Home.setWindowTitle(_translate("Home", "yay+ PyQt Version(Beta)"))
-        self.title.setText(_translate("Home", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt; font-weight:700;\">yay+ PyQt版（测试中）</span></p><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">版本0.1 Beta</span></p></body></html>"))
-        self.pushButton_install.setText(_translate("Home", "安装"))
-        self.pushButton_uninstall.setText(_translate("Home", "卸载"))
-        self.pushButton_run_flatpak.setText(_translate("Home", "运行（Flatpak软件包）"))
-        self.pushButton_exit.setText(_translate("Home", "退出"))
+        self.title.setText(_translate("Home", self.tr("<html><head/><body><p align=\"center\"><span style=\" font-size:20pt; font-weight:700;\">yay+ PyQt版（测试中）</span></p><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">版本0.1 Beta</span></p></body></html>")))
+        self.pushButton_install.setText(_translate("Home", self.tr("安装")))
+        self.pushButton_uninstall.setText(_translate("Home", self.tr("卸载")))
+        self.pushButton_run_flatpak.setText(_translate("Home", self.tr("运行（Flatpak软件包）")))
+        self.pushButton_exit.setText(_translate("Home", self.tr("退出")))
 
     # C_Uninstall和restore_main_window由Deepseek-r1生成
     def C_Uninstall(self):
@@ -69,7 +69,7 @@ class Ui_Home(object):
         self.uninstall_dialog.exec()
 
     def restore_main_window(self, result):
-        print(self.tr("卸载窗口已关闭，返回码:"), result)
+        print("卸载窗口已关闭，返回码:", result)
 
 
 if __name__ == "__main__":

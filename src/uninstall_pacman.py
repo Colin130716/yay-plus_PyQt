@@ -39,11 +39,11 @@ class Ui_Uninstall_Pacman(object):
 
     def retranslateUi(self, Uninstall_Pacman):
         _translate = QtCore.QCoreApplication.translate
-        Uninstall_Pacman.setWindowTitle(_translate("Uninstall_Pacman", "Dialog"))
-        self.label.setText(_translate("Uninstall_Pacman", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">卸载</span></p></body></html>"))
-        self.lineEdit.setText(_translate("Uninstall_Pacman", "修改此处文字修改为你要卸载的软件名称（支持多个，用空格隔开）"))
-        self.pushButton_no.setText(_translate("Uninstall_Pacman", "取消"))
-        self.pushButton_yes.setText(_translate("Uninstall_Pacman", "确定"))
+        Uninstall_Pacman.setWindowTitle(_translate("Uninstall_Pacman", "yay+ Uninstall with Pacman"))
+        self.label.setText(_translate("Uninstall_Pacman", self.tr("<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">卸载</span></p></body></html>")))
+        self.lineEdit.setText(_translate("Uninstall_Pacman", self.tr("修改此处文字修改为你要卸载的软件名称（支持多个，用空格隔开）")))
+        self.pushButton_no.setText(_translate("Uninstall_Pacman", self.tr("取消")))
+        self.pushButton_yes.setText(_translate("Uninstall_Pacman", self.tr("确定")))
 
     def yes_button_clicked(self):
         self.input_text = self.lineEdit.text()

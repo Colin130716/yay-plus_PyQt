@@ -2,6 +2,8 @@
 
 yay+的PyQt版项目存放位置，开源协议同[主仓库](https://github.com/Colin130716/yay-plus)，为GPLv3。
 
+**提问前请看[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)**
+
 ![icon](https://github.com/Colin130716/yay-plus_PyQt/blob/master/icons/256x256.png)
 
 ## 项目Shell版仓库：[https://github.com/Colin130716/yay-plus](https://github.com/Colin130716/yay-plus)

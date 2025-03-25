@@ -97,12 +97,6 @@ def get_password():
     if check_attempts():
         print("安全锁定：超过最大尝试次数")
         sys.exit(99)
-
-    """安全获取密码"""
-    if not is_sudo_call():
-        print("拒绝非sudo请求", file=sys.stderr)
-        return 1
-
     try:
         with open(KEY_FILE, "rb") as f:
             key = f.read()
